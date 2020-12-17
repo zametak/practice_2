@@ -1,0 +1,302 @@
+%------------------Settings-------------------------
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{graphics}
+\usepackage{pbox}
+\usepackage[x11names]{xcolor}
+\definecolor{brightmaroon}{rgb}{0.76, 0.13, 0.28}
+\definecolor{royalazure}{rgb}{0.0, 0.22, 0.66}
+\usepackage[colorlinks=true,linkcolor=royalazure]{hyperref}
+\usepackage{tikz, tkz-fct, pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+} 
+\usepackage[labelsep=period]{caption}
+
+% ----------------- Commands ----------------- 
+
+\newcommand{\eps}{\varepsilon}
+\newcommand\tline[2]{$\underset{\text{#1}}{\text{\underline{\hspace{#2}}}}$}
+
+% ----------------- Set graphics path ----------------- 
+\graphicspath{{img/}}
+\begin{document}
+\pagestyle{empty}
+
+% ----------------------Title----------------------------------
+\centerline{\large Министерство науки и высшего образования}	
+\centerline{\large Федеральное государственное бюджетное образовательное}
+\centerline{\large учреждение высшего образования}
+\centerline{\large ``Московский государственный технический университет}
+\centerline{\large имени Н.Э. Баумана}
+\centerline{\large (национальный исследовательский университет)''}
+\centerline{\large (МГТУ им. Н.Э. Баумана)}
+\hrule
+\vspace{0.5cm}
+\begin{figure}[h]
+\center
+\includegraphics[height=0.35\linewidth]{bmstu-logo-small.png}
+\end{figure}
+\begin{center}
+	\large	
+	\begin{tabular}{c}
+		Факультет ``Фундаментальные науки'' \\
+		Кафедра ``Высшая математика''		
+	\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+	\LARGE \bf	
+	\begin{tabular}{c}
+		\textsc{Отчёт} \\
+		по учебной практике \\
+		за 1 семестр 2020---2021 гг.
+	\end{tabular}
+\end{center}
+\vspace{0.5cm}
+\begin{center}
+	\large
+	\begin{tabular}{p{5.3cm}ll}
+		\pbox{5.45cm}{
+			Руководитель практики,\\
+			ст. преп. кафедры ФН1} 	& \tline{\it(подпись)}{5cm} & Кравченко О.В. \\[0.5cm]
+		студент группы ФН1--11 		& \tline{\it(подпись)}{5cm} & Аверина А.А.
+	\end{tabular}
+\end{center}
+\vfill
+\begin{center}
+	\large	
+	\begin{tabular}{c}
+		Москва, \\
+		2020 г.
+	\end{tabular}
+\end{center}
+ \newpage
+ \newpage	
+\tableofcontents
+
+%------------------Table of contents----------------------
+\newpage
+\section{Цели и задачи практики}	
+\subsection{Цели}
+--- развитие компетенций, способствующих успешному освоению материала бакалавриата и необходимых в будущей профессиональной деятельности.
+
+\subsection{Задачи}
+\begin{enumerate}
+\item Знакомство с программными средствами, необходимыми в будущей профессиональной деятельности.
+\item Развитие умения поиска необходимой информации в специальной литературе и других источниках.
+\item Развитие навыков составления отчётов и презентации результатов.
+\end{enumerate}
+
+\subsection{Индивидуальное задание}	
+\begin{enumerate}
+\item Изучить способы отображения математической информации в системе вёртски \LaTeX.
+\item Изучить возможности  системы контроля версий \textsf{Git}.
+\item Научиться верстать математические тексты, содержащие формулы и графики в системе \LaTeX.
+Для этого, выполнить установку свободно распространяемого дистрибутива \textsf{TeXLive} и оболочки \textsf{TeXStudio}.
+\item Оформить в системе \LaTeX типовые расчёты по курсе математического анализа согласно своему варианту.
+\item Создать аккаунт на онлайн ресурсе \textsf{GitHub} и загрузить исходные \textsf{tex}--файлы 
+и результат компиляции в формате \textsf{pdf}.
+\end{enumerate} 
+
+%---------------------------------------------------------------
+\newpage
+\section{Отчёт}
+Актуальность темы продиктована необходимостью владеть системой вёрстки \LaTeX и средой вёрстки \textsf{TeXStudio} для
+отображения текста, формул и графиков. Полученные в ходе практики навыки могут быть применены при написании
+курсовых проектов и дипломной работы, а также в дальнейшей профессиональной деятельности.
+
+Ситема вёрстки \LaTeX содержит большое количество инструментов (пакетов), упрощающих отображение информации в различных 
+сферах инженерной и научной деятельности. 
+%-----------------------------------------------------------------
+\newpage
+\section{Индивидуальное задание}
+%\subsection{Элементарные функции и их графики.}
+%\input{src/part1.tex}
+
+%==============================================================================
+\subsection{Пределы и непрерывность.}
+
+%---------------------------- Problem 1----------------------------------
+\subsubsection*{\center Задача № 1.}
+{\bf Условие.~}
+Дана последовательность $a_{n}=\dfrac{7n+4}{2n+1}$ и число $c=\dfrac{7}{2}$. Доказать, что $\lim\limits_{x\rightarrow\infty} a_{n}=c $, а именно, для каждого $\varepsilon>0$ найти наименьшее натуральное число  $N{=}N(\varepsilon)$ такое, что $|a_{n}-c|<\varepsilon$ для всех $n>N(\varepsilon)$. Заполнить таблицу: 
+\begin{center}
+\begin{tabular}{ | p{25pt} | c | c | c | c |}
+\hline
+$\varepsilon$& $0{,}1$ & $0{,}01$ & $0{,}001$ \\ \hline
+$N(\varepsilon)$ &   &   &\\
+\hline
+\end{tabular}
+\end{center}
+\medskip
+%=====================================================================
+{\bf Решение.~}
+Рассмотрим неравенство $a_{n}-c<\varepsilon$, $\forall\varepsilon>0$, учитывая выражение для $a_{n}$ и $c$ из условия варианта, получим 
+$$\left|\frac{7n+4}{2n+1}-\frac{7}{2}\right|<\varepsilon$$
+Неравенство запишем в виде двойного неравенства и приведём выражение под знаком модуля к общему знаменателю, получим
+$${-}\varepsilon <\dfrac{1}{4n+2}<\varepsilon$$
+Заметим, что левое неравенство выполнено для любого номера $n\in \mathbb{N}$ поэтому, будем рассматривать правое неравенство
+$$\frac{1}{4n+2}<\varepsilon$$
+Выполнив цепочку преобразований, перепишем неравенство относительно $n$, и, учитывая, что $n\in \mathbb{N}$, получим 
+$$\dfrac{1}{2(2n+1)}<\varepsilon,$$
+$$2n+1>\dfrac{1}{2\varepsilon},$$
+$$n>\dfrac{1}{4\varepsilon}-\dfrac{1}{2},$$
+$$n>\dfrac{1-2\varepsilon}{4\varepsilon},$$
+$$N(\varepsilon)=\biggl[\dfrac{1-2\varepsilon}{4\varepsilon}\biggr],$$
+где $[\;]$ -- целая часть от числа. Заполним таблицу:
+\begin{center}
+\begin{tabular}{ | p{25pt} | c | c | c | c |}
+\hline
+$\varepsilon$& $0{,}1$ & $0{,}01$ & $0{,}001$ \\ \hline
+$N(\varepsilon)$ & 2  & 24 & 249\\
+\hline
+\end{tabular}
+\end{center}
+{\bf Проверка:~}
+$$|a_{3}-c|=\dfrac{1}{15}<0{,}1,$$
+$$|a_{25}-c|=\dfrac{1}{102}<0{,}01,$$
+$$|a_{250}-c|=\dfrac{1}{1002}<0{,}001.$$
+\newpage
+% ---------------------------- Problem 2----------------------------------
+\subsubsection*{\center Задача № 2.}
+{\bf Условие.~}
+Вычислить пределы функций
+$$
+\begin{array}{cc}
+\text{\bf(а):} &  \lim\limits_{x\rightarrow-1}\dfrac{(x^3-2x-1)^2}{x^4+2x+1} , \\[10pt]
+\text{\bf(б):} & \lim\limits_{x\rightarrow+\infty} \dfrac{\sqrt[3]{x^2\sqrt{x^2+1}}+3x}{x} ,\\[10pt]
+\text{\bf(в):} & \lim\limits_{x\rightarrow0} \dfrac{\sqrt{x+1}\sqrt{1+2x}-1}{x},\\[10pt]
+\text{\bf(г):} & \lim\limits_{x\rightarrow+0} \biggl( 2-e^{\arcsin^2\sqrt{x}}\biggl)^{3/x}, \\[10pt]
+\text{\bf(д):} & \lim\limits_{x\rightarrow0} \left(\dfrac{\tg{4x}}{x}\right)^{2+x} , \\[10pt]
+\text{\bf(е):}  & \lim\limits_{x\rightarrow-\pi} \dfrac{\sin{4x}}{x^2+\pi x} . \\
+\end{array}
+$$
+\\
+{\bf Решение.~}\\
+\\
+\text{\bf(а):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow-1} \dfrac{(x^3-2x-1)^2}{x^4+2x+1} =  \lim\limits_{x\rightarrow-1}  \dfrac{(x+1)^2(x^2-x-1)^2}{(x+1)(x^3-x^2+x+1)} = \lim\limits_{x\rightarrow-1}  \dfrac{(x+1)(x^2-x-1)^2}{x^3-x^2+x+1}=0
+\end{array}
+$$
+\\
+\text{\bf(б):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow+\infty} \dfrac{\sqrt[3]{x^2\sqrt{x^2+1}}+3x}{x}=\lim\limits_{x\rightarrow+\infty} \dfrac{\sqrt[3]{x^2\sqrt{x^2+1}}}{x}=\lim\limits_{x\rightarrow+\infty} \sqrt[3]{\dfrac{x^2}{x^3}\sqrt{x^2+1}}=\lim\limits_{x\rightarrow+\infty} \sqrt[6]{{\dfrac{x^2+1}{x^2}}}=\\
+= \lim\limits_{x\rightarrow+\infty} \sqrt[6]{1+\dfrac{1}{x^2}}= \lim\limits_{x\rightarrow+\infty} \sqrt[6]{\dfrac{1}{x^2}}=0
+\end{array}
+$$
+\text{\bf(в):}
+ $$
+ \begin{array}{l} 
+ \lim\limits_{x\rightarrow0} \dfrac{\sqrt{x+1}\sqrt{1+2x}-1}{x} = \left[\dfrac{0}{0} \right]= \lim\limits_{x\rightarrow0} \dfrac{(x+1)(1+2x)-1}{x(\sqrt{x+1}\sqrt{1+2x}+1)} = \lim\limits_{x\rightarrow0} \dfrac{2x+3}{\sqrt{x+1}\sqrt{1+2x}+1}\\ \medskip{}{} =\dfrac{3}{2}
+ \end{array}
+ $$
+ \\
+\text{\bf(г):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow+0} \biggl( 2-e^{\arcsin^2\sqrt{x}}\biggr)^{3/x}=\lim\limits_{x\rightarrow+0} \exp  \biggl( ln\biggl( 2-e^{\arcsin^2\sqrt{x}} \biggr) \biggr)^{3/x}} =\exp{\biggl(\lim\limits_{x\rightarrow+0}\dfrac{3}{x}\ln\biggl(2-\arcsin^2\sqrt{x}\biggr)\biggr)}= \\
+=\exp{\biggl( \lim\limits_{x\rightarrow+0}-\dfrac{3}{x}\biggl({\arcsin^2\sqrt{x}}\biggr)\biggr)}=\exp{\biggl(-\lim\limits_{x\rightarrow+0}\dfrac{3x}{x}\biggr)}=e^{-3}
+\end{array}
+$$
+\\
+\text{\bf(д):}
+$$
+\begin{array}{l}
+ \lim\limits_{x\rightarrow0} \left(\dfrac{\tg4x}{x}\right)^{2+x}=\left| \tg4x \sim 4x, x \to 0 \right|=\lim\limits_{x\rightarrow0} \left(\dfrac{4x}{x}\right)^{2+x}=\lim\limits_{x\rightarrow0}4^{2+x}=16
+\end{array}
+$$
+
+\text{\bf(е):}
+$$
+\begin{array}{l}
+\lim\limits_{x\rightarrow-\pi} \dfrac{\sin4x}{x^2+\pi x}=\left| t=x+\pi, t \to 0\right|=\lim\limits_{t\rightarrow0} \dfrac{\sin4(t-\pi)}{(t-\pi)^2+\pi (t-\pi)}=\left|\sin4(t-\pi)\sim 4(t-\pi) , t \to 0\right| = \\
+= \lim\limits_{t\rightarrow0} \dfrac {4} {(t-\pi)+\pi}=\lim\limits_{t\rightarrow0} \dfrac {4} {t}=\infty
+\end{array}
+$$
+% ---------------------------- Problem 3----------------------------------
+\subsubsection*{\center Задача № 3.}
+{\bf Условие.~}\\
+\text{\bf(а):} Показать, что данные функции
+$f(x)$ и $g(x)$ являются бесконечно малыми или бесконечно большими
+при указанном стремлении аргумента. \\
+\text{\bf(б):} Для каждой функции $f(x)$ и $g(x)$ записать главную часть
+(эквивалентную ей функцию)  вида $C(x-x_0)^{\alpha}$ при $x\rightarrow x_0$ или $Cx^{\alpha}$
+при $x\rightarrow\infty$, указать их порядки малости (роста). \\
+\text{\bf(в):} Сравнить функции $f(x)$ и $g(x)$ при указанном стремлении.
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		№ варианта & функции $f(x)$ и $g(x)$ & стремление \\[6pt]
+		\hline
+		2 & $f(x) = \dfrac{\sqrt{x}}{\sqrt[3]{x+1}-\sqrt[3]{x}},~g(x)=x^2\ln\dfrac{3x^2+2x+1}{3x^2}$ & $x\rightarrow+\infty$ \\
+		\hline
+		\end{tabular}
+		\bigskip
+		\\
+		{\bf Решение.~}\\
+		\end{center}
+		\medskip
+		\text{\bf(а):}~Покажем, что $f(x)$ и $g(x)$ бесконечно большие функции,
+$$
+ \begin{array}{l} 
+\lim\limits_{x\rightarrow+ \infty} f(x)=\lim\limits_{x\rightarrow +\infty} \dfrac{\sqrt{x}}{\sqrt[3]{x+1}-\sqrt[3]{x}}=\lim\limits_{x\rightarrow+\infty} \dfrac{\sqrt{x}}{\sqrt[3]{x}\biggl(\sqrt[3]{1+\frac{1}{x}}-1\biggr)}=\lim\limits_{x\rightarrow +\infty}x^{\frac{1}{6}}\biggl({\biggl(1+\frac{1}{x}}\biggr)^{\frac{2}{3}}+\sqrt[3]{1+\frac{1}{x}}+1  \biggr)=\\ =3\lim\limits_{x\rightarrow+\infty}x^{\frac{1}{6}}=\infty , \\
+ 
+\lim\limits_{x\rightarrow+ \infty} g(x)= \lim\limits_{x\rightarrow \infty}  x^2\ln\dfrac{3x^2+2x+1}{3x^2}=\lim\limits_{x\rightarrow +\infty}x^2\ln\biggl(1+\dfrac{2}{3x}+\dfrac{1}{3x^2}\biggr)=\lim\limits_{x\rightarrow +\infty}x^2\biggl(\dfrac{2}{3x}+\dfrac{1}{3x^2}\biggr)=\\
+=\lim\limits_{x\rightarrow +\infty}x^2 \biggl(\dfrac{2}{3x}+\dfrac{1}{3x^2}\biggr)=\lim\limits_{x\rightarrow +\infty}\biggl( \dfrac{2}{3x}+\dfrac{1}{3}\biggr)=\lim\limits_{x\rightarrow +\infty} \dfrac{2x}{3}=\infty.
+\end{array}
+$$
+\text{\bf(б):}~Так как $f(x)$ и $g(x)$ бесконечно большие функции, то эквивалентными им будут функции вида 
+$Cx^{\alpha}$ при $x\rightarrow+\infty$. Найдём эквивалентную для $f(x)$ из условия
+$$
+\lim\limits_{x\rightarrow+\infty}\dfrac{f(x)}{x^{\alpha}} = C,
+$$
+где $C$ --- некоторая константа. Рассмотрим предел
+$$
+\lim\limits_{x\rightarrow +\infty} \dfrac{\sqrt{x}}{x^{\alpha}\biggl(\sqrt[3]{x+1}-\sqrt[3]{x}\biggr)}=3\lim\limits_{x\rightarrow+\infty}\dfrac{x^{\frac{1}{6}}}{x^{\alpha}}
+$$
+При $\alpha=\dfrac{1}{6}$ последний предел равен $3$, отсюда $C=3$ и 
+$$
+f(x)\sim 3x^{\frac{1}{6}}~\text{при}~x\rightarrow+\infty.
+$$
+Аналогично, рассмотрим предел
+$$
+\lim\limits_{x\rightarrow+\infty}\dfrac{g(x)}{x^{\alpha}} =\lim\limits_{x\rightarrow+\infty}\dfrac{x^2\ln\dfrac{3x^2+2x+1}{3x^2}}{x^{\alpha}}=\lim\limits_{x\rightarrow +\infty} \dfrac{2x}{3x^{\alpha}}
+$$
+При $\alpha=1$ последний предел равен $\dfrac{2}{3}$, отсюда $C=\dfrac{2}{3}$ и
+$$
+g(x)\sim\frac{2}{3} x~\text{при}~x\rightarrow+\infty.
+$$
+\text{\bf(в):}~Для сравнения функций $f(x)$ и $g(x)$ рассмотрим предел их отношения при указанном стремлении
+$$
+\lim\limits_{x\rightarrow\infty}\dfrac{f(x)}{g(x)}.
+$$
+Применим эквивалентности, определенные в пункте (б), получим
+$$
+\lim\limits_{x\rightarrow+\infty}\dfrac{f(x)}{g(x)} = \lim\limits_{x\rightarrow+\infty}\dfrac{9x^{\frac{1}{6}}}{2x}=\lim\limits_{x\rightarrow+\infty} \dfrac{9}{2x^{\frac{5}{6}}}=0
+$$
+Отсюда, $g(x)$ есть бесконечно большая функция более высокого порядка роста, чем $f(x)$.
+%=================================================================================================================================
+%\subsection{Приложения дифференциального исчисления.}
+%\input{src/part3.tex}
+
+\newpage
+\addcontentsline{toc}{section}{Список литературы}
+\begin{thebibliography}{99}
+\bibitem{book01} Львовский С.М. Набор и вёрстка в системе \LaTeX, 2003 c.
+\bibitem{book02} Е.М. Балдин Компьютерная типография \LaTeX.
+
+\end{thebibliography}
+\end{document}
